@@ -1,0 +1,160 @@
+
+Note: Compatibility modes selected: hs a
+
+
+Circuit: * reduced testbench: capless_ldo (analog design bench: sky130-capless-ldo-1v0-20ma-pvt)
+
+option SCALE: Scale is set to 1e-06 for instance and model parameters
+Doing analysis at TEMP = 27.000000 and TNOM = 27.000000
+
+Using SPARSE 1.3 as Direct Linear Solver
+ Reference value :  0.00000e+00
+No. of Data Rows : 1
+METRIC iq_ua 159.558
+Doing analysis at TEMP = 27.000000 and TNOM = 27.000000
+
+Using SPARSE 1.3 as Direct Linear Solver
+ Reference value :  3.40000e-03
+ Reference value :  5.40000e-03
+No. of Data Rows : 101
+METRIC dc_vmax_v 1.01822
+METRIC dc_vmin_v 1.00319
+Doing analysis at TEMP = 27.000000 and TNOM = 27.000000
+
+Using SPARSE 1.3 as Direct Linear Solver
+
+No. of Data Rows : 101
+g1k                 =  -6.19470e+01
+g100k               =  -3.90484e+01
+g1m                 =  -2.08861e+01
+METRIC psr_1k_db 61.947
+METRIC psr_100k_db 39.0485
+METRIC psr_1m_db 20.8861
+Doing analysis at TEMP = 27.000000 and TNOM = 27.000000
+
+Using SPARSE 1.3 as Direct Linear Solver
+
+Initial Transient Solution
+--------------------------
+
+Node                                   Voltage
+----                                   -------
+vss                                          0
+vref                                       0.4
+vin                                       1.65
+vout                                   1.01028
+xdut.nb                               0.700958
+xdut.sa                                1.38404
+xdut.sb                                1.34231
+xdut.pb                                0.67923
+xdut.ns                              0.0999977
+xdut.st                                1.38583
+xdut.tail                             0.880954
+xdut.d4                               0.606421
+xdut.d3                                0.60366
+xdut.fb                               0.404113
+xdut.gate                             0.737947
+xdut.d7                               0.307415
+xdut.s7                                1.12408
+xdut.s8                                1.12977
+xdut.cmx                               1.01028
+xdut.vc1                               1.01028
+vins                                         0
+vouts                            -3.27915e-214
+xduts.nb                           1.14393e-95
+xduts.sa                          1.74557e-100
+xduts.sb                           1.42503e-25
+xduts.pb                          -2.73127e-18
+xduts.ns                           4.93273e-27
+xduts.st                          -5.71449e-24
+xduts.tail                         -3.3971e-18
+xduts.d4                          -2.13092e-18
+xduts.d3                           1.77582e-18
+xduts.fb                         -1.31166e-214
+xduts.gate                        -2.62982e-12
+xduts.d7                          -2.94014e-12
+xduts.s7                          -4.20774e-18
+xduts.s8                          -9.94919e-19
+xduts.cmx                        -3.27915e-214
+xduts.vc1                        -3.27915e-214
+vsups#branch                      -4.08616e-22
+vsup#branch                       -0.000658942
+vref#branch                                  0
+vss#branch                        -3.72622e-17
+
+ Reference value :  7.50383e-05
+ Reference value :  2.01180e-04
+ Reference value :  3.29620e-04
+No. of Data Rows : 10034
+droop               =  9.75814e-01 at=  2.00455e-05
+w1max               =  1.01028e+00 at=  2.00000e-05
+bump                =  1.04605e+00 at=  6.10040e-05
+w2min               =  1.00319e+00 at=  6.00000e-05
+t1max               =  1.00319e+00 at=  4.91709e-05
+t1min               =  1.00319e+00 at=  4.45709e-05
+t2max               =  1.01028e+00 at=  8.10383e-05
+t2min               =  1.01028e+00 at=  8.10783e-05
+METRIC step_vmin_v 0.975814
+METRIC step_vmax_v 1.04605
+METRIC tail_vmin_v 1.00319
+METRIC tail_vmax_v 1.01028
+peak                =  1.03731e+00 at=  6.65983e-05
+smax                =  1.00996e+00 at=  2.02540e-04
+smin                =  1.00996e+00 at=  2.00020e-04
+METRIC start_peak_v 1.03731
+METRIC start_settle_max_v 1.00996
+METRIC start_settle_min_v 1.00996
+ngspice-47 done
+
+Warning: m=xx on .subckt line will override multiplier m hierarchy!
+
+Note: iload: dc value used for op instead of transient time=0 value.
+Note: iload: dc value used for op instead of transient time=0 value.
+Note: Starting dynamic gmin stepping
+Note: Dynamic gmin stepping completed
+Note: Starting dynamic gmin stepping
+Note: Dynamic gmin stepping completed
+Note: Starting dynamic gmin stepping
+Note: Dynamic gmin stepping completed
+Note: Starting dynamic gmin stepping
+Note: Dynamic gmin stepping completed
+Note: Starting dynamic gmin stepping
+Note: Dynamic gmin stepping completed
+Note: Starting dynamic gmin stepping
+Note: Dynamic gmin stepping completed
+Note: Starting dynamic gmin stepping
+Note: Dynamic gmin stepping completed
+Note: Starting dynamic gmin stepping
+Note: Dynamic gmin stepping completed
+Note: Starting dynamic gmin stepping
+Note: Dynamic gmin stepping completed
+Note: Starting dynamic gmin stepping
+Note: Dynamic gmin stepping completed
+Note: Starting dynamic gmin stepping
+Note: Dynamic gmin stepping completed
+Note: Starting dynamic gmin stepping
+Note: Dynamic gmin stepping completed
+Note: Starting dynamic gmin stepping
+Note: Dynamic gmin stepping completed
+Note: Starting dynamic gmin stepping
+Note: Dynamic gmin stepping completed
+Note: Starting dynamic gmin stepping
+Note: Dynamic gmin stepping completed
+Note: Starting dynamic gmin stepping
+Note: Dynamic gmin stepping completed
+Note: Starting dynamic gmin stepping
+Note: Dynamic gmin stepping completed
+Note: Starting dynamic gmin stepping
+Note: Dynamic gmin stepping completed
+Note: Starting dynamic gmin stepping
+Note: Dynamic gmin stepping completed
+Note: Starting dynamic gmin stepping
+Note: Dynamic gmin stepping completed
+Note: Starting dynamic gmin stepping
+Note: Dynamic gmin stepping completed
+Note: Starting dynamic gmin stepping
+Note: Dynamic gmin stepping completed
+Note: Starting dynamic gmin stepping
+Note: Dynamic gmin stepping completed
+Note: iload: dc value used for op instead of transient time=0 value.
+Note: iload: dc value used for op instead of transient time=0 value.

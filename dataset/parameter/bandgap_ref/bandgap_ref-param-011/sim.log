@@ -1,0 +1,305 @@
+
+Note: Compatibility modes selected: hs a
+
+
+Circuit: * reduced testbench: bandgap_reference (analog design bench: sky130-bandgap-reference-pvt)
+
+option SCALE: Scale is set to 1e-06 for instance and model parameters
+Doing analysis at TEMP = 27.000000 and TNOM = 27.000000
+
+Using SPARSE 1.3 as Direct Linear Solver
+ Reference value :  0.00000e+00
+No. of Data Rows : 1
+METRIC vref_v 1.23088
+METRIC power_uw 70.471
+Doing analysis at TEMP = 27.000000 and TNOM = 27.000000
+
+Using SPARSE 1.3 as Direct Linear Solver
+
+No. of Data Rows : 37
+METRIC line_mv_per_v 12.9746
+Doing analysis at TEMP = 27.000000 and TNOM = 27.000000
+
+Using SPARSE 1.3 as Direct Linear Solver
+
+No. of Data Rows : 71
+METRIC psrr_max_vv 0.110747
+Doing analysis at TEMP = 27.000000 and TNOM = 27.000000
+
+Using SPARSE 1.3 as Direct Linear Solver
+
+Initial Transient Solution
+--------------------------
+
+Node                                   Voltage
+----                                   -------
+vss                                          0
+vdd                                          0
+xbg.va                            -2.41432e-20
+xbg.pctrl                          1.80442e-19
+xbg.vb                            -6.20747e-24
+vref                               1.34269e-19
+xbg.xrptat.rb                     -6.20747e-24
+xbg.n1                            -6.20747e-24
+xbg.xrref.rb                       1.34269e-19
+xbg.vctat                          1.34269e-19
+xbg.xcref1.a                                 0
+xbg.xcref1.b1                                0
+xbg.xcref2.a                                 0
+xbg.xcref2.b1                                0
+xbg.xrbias.t1                    -7.42875e-163
+xbg.xrbias.t2                    -5.12265e-159
+xbg.nbias                        -5.12339e-159
+xbg.tail                          -1.06971e-18
+xbg.nout                            1.1623e-19
+xbg.xccomp.a                                 0
+xbg.xccomp.b1                                0
+xbg.st                             1.31557e-68
+xbg.xrstleak.t1                    1.31557e-68
+xbg.xrstleak.t2                    4.95985e-74
+vdd#branch                        -1.92965e-31
+vss#branch                         2.90612e-38
+
+ Reference value :  3.20000e-09
+ Reference value :  2.75534e-05
+No. of Data Rows : 3077
+startup_min         =  1.23088e+00 at=  2.09934e-05
+startup_max         =  1.23091e+00 at=  1.10034e-05
+vfinal              =  1.23088e+00
+vpeak               =  1.40130e+00 at=  1.00700e-06
+METRIC startup_min_v 1.23088
+METRIC startup_max_v 1.23091
+METRIC overshoot_mv 170.42
+Doing analysis at TEMP = 27.000000 and TNOM = 27.000000
+
+Using SPARSE 1.3 as Direct Linear Solver
+
+No. of Data Rows : 34
+METRIC tc_ppm_per_c 26.3038
+ngspice-47 done
+
+Warning: m=xx on .subckt line will override multiplier m hierarchy!
+
+  .model xbg.xq0:sky130_fd_pr__npn_05v5_w1p00l1p00__model npn level=1.0 tr ...
+unrecognized parameter (dcap) - ignored
+unrecognized parameter (gap1) - ignored
+unrecognized parameter (gap2) - ignored
+
+  .model xbg.xrptat:rhead_model r sw_et=0 isnoisy=0 rsh=    3.458312000000 ...
+unrecognized parameter (sw_et) - ignored
+unrecognized parameter (isnoisy) - ignored
+unrecognized parameter (p2) - ignored
+unrecognized parameter (q2) - ignored
+
+  .model xbg.xrptat:rbody_model r sw_et=0 isnoisy=0 rsh=    3.173885000000 ...
+unrecognized parameter (sw_et) - ignored
+unrecognized parameter (isnoisy) - ignored
+unrecognized parameter (p2) - ignored
+unrecognized parameter (q2) - ignored
+unrecognized parameter (p3) - ignored
+unrecognized parameter (q3) - ignored
+
+  .model xbg.xq1a:sky130_fd_pr__npn_05v5_w1p00l1p00__model npn level=1.0 t ...
+unrecognized parameter (dcap) - ignored
+unrecognized parameter (gap1) - ignored
+unrecognized parameter (gap2) - ignored
+
+  .model xbg.xq1b:sky130_fd_pr__npn_05v5_w1p00l1p00__model npn level=1.0 t ...
+unrecognized parameter (dcap) - ignored
+unrecognized parameter (gap1) - ignored
+unrecognized parameter (gap2) - ignored
+
+  .model xbg.xq1c:sky130_fd_pr__npn_05v5_w1p00l1p00__model npn level=1.0 t ...
+unrecognized parameter (dcap) - ignored
+unrecognized parameter (gap1) - ignored
+unrecognized parameter (gap2) - ignored
+
+  .model xbg.xq1d:sky130_fd_pr__npn_05v5_w1p00l1p00__model npn level=1.0 t ...
+unrecognized parameter (dcap) - ignored
+unrecognized parameter (gap1) - ignored
+unrecognized parameter (gap2) - ignored
+
+  .model xbg.xq1e:sky130_fd_pr__npn_05v5_w1p00l1p00__model npn level=1.0 t ...
+unrecognized parameter (dcap) - ignored
+unrecognized parameter (gap1) - ignored
+unrecognized parameter (gap2) - ignored
+
+  .model xbg.xq1f:sky130_fd_pr__npn_05v5_w1p00l1p00__model npn level=1.0 t ...
+unrecognized parameter (dcap) - ignored
+unrecognized parameter (gap1) - ignored
+unrecognized parameter (gap2) - ignored
+
+  .model xbg.xq1g:sky130_fd_pr__npn_05v5_w1p00l1p00__model npn level=1.0 t ...
+unrecognized parameter (dcap) - ignored
+unrecognized parameter (gap1) - ignored
+unrecognized parameter (gap2) - ignored
+
+  .model xbg.xq1h:sky130_fd_pr__npn_05v5_w1p00l1p00__model npn level=1.0 t ...
+unrecognized parameter (dcap) - ignored
+unrecognized parameter (gap1) - ignored
+unrecognized parameter (gap2) - ignored
+
+  .model xbg.xrref:rhead_model r sw_et=0 isnoisy=0 rsh=    3.4583120000000 ...
+unrecognized parameter (sw_et) - ignored
+unrecognized parameter (isnoisy) - ignored
+unrecognized parameter (p2) - ignored
+unrecognized parameter (q2) - ignored
+
+  .model xbg.xrref:rbody_model r sw_et=0 isnoisy=0 rsh=    3.1738850000000 ...
+unrecognized parameter (sw_et) - ignored
+unrecognized parameter (isnoisy) - ignored
+unrecognized parameter (p2) - ignored
+unrecognized parameter (q2) - ignored
+unrecognized parameter (p3) - ignored
+unrecognized parameter (q3) - ignored
+
+  .model xbg.xqrefa:sky130_fd_pr__npn_05v5_w1p00l1p00__model npn level=1.0 ...
+unrecognized parameter (dcap) - ignored
+unrecognized parameter (gap1) - ignored
+unrecognized parameter (gap2) - ignored
+
+  .model xbg.xqrefb:sky130_fd_pr__npn_05v5_w1p00l1p00__model npn level=1.0 ...
+unrecognized parameter (dcap) - ignored
+unrecognized parameter (gap1) - ignored
+unrecognized parameter (gap2) - ignored
+
+Note: vdd: dc value used for op instead of transient time=0 value.
+Note: Starting dynamic gmin stepping
+Note: Dynamic gmin stepping completed
+Note: vdd: dc value used for op instead of transient time=0 value.
+Note: Starting dynamic gmin stepping
+Note: Dynamic gmin stepping completed
+Note: Starting dynamic gmin stepping
+Note: Dynamic gmin stepping completed
+Note: Starting dynamic gmin stepping
+Note: Dynamic gmin stepping completed
+Note: Starting dynamic gmin stepping
+Note: Dynamic gmin stepping completed
+Note: Starting dynamic gmin stepping
+Note: Dynamic gmin stepping completed
+Note: Starting dynamic gmin stepping
+Note: Dynamic gmin stepping completed
+Note: Starting dynamic gmin stepping
+Note: Dynamic gmin stepping completed
+Note: Starting dynamic gmin stepping
+Note: Dynamic gmin stepping completed
+Note: Starting dynamic gmin stepping
+Note: Dynamic gmin stepping completed
+Note: Starting dynamic gmin stepping
+Note: Dynamic gmin stepping completed
+Note: Starting dynamic gmin stepping
+Note: Dynamic gmin stepping completed
+Note: Starting dynamic gmin stepping
+Note: Dynamic gmin stepping completed
+Note: Starting dynamic gmin stepping
+Note: Dynamic gmin stepping completed
+Note: Starting dynamic gmin stepping
+Note: Dynamic gmin stepping completed
+Note: Starting dynamic gmin stepping
+Note: Dynamic gmin stepping completed
+Note: Starting dynamic gmin stepping
+Note: Dynamic gmin stepping completed
+Note: Starting dynamic gmin stepping
+Note: Dynamic gmin stepping completed
+Note: Starting dynamic gmin stepping
+Note: Dynamic gmin stepping completed
+Note: Starting dynamic gmin stepping
+Note: Dynamic gmin stepping completed
+Note: Starting dynamic gmin stepping
+Note: Dynamic gmin stepping completed
+Note: Starting dynamic gmin stepping
+Note: Dynamic gmin stepping completed
+Note: Starting dynamic gmin stepping
+Note: Dynamic gmin stepping completed
+Note: Starting dynamic gmin stepping
+Note: Dynamic gmin stepping completed
+Note: Starting dynamic gmin stepping
+Note: Dynamic gmin stepping completed
+Note: vdd: dc value used for op instead of transient time=0 value.
+Note: Starting dynamic gmin stepping
+Note: Dynamic gmin stepping completed
+Note: vdd: dc value used for op instead of transient time=0 value.
+Note: vdd: dc value used for op instead of transient time=0 value.
+Note: vdd: dc value used for op instead of transient time=0 value.
+Note: vdd: dc value used for op instead of transient time=0 value.
+Note: Starting dynamic gmin stepping
+Note: Dynamic gmin stepping completed
+Note: vdd: dc value used for op instead of transient time=0 value.
+Note: Starting dynamic gmin stepping
+Note: Dynamic gmin stepping completed
+Note: vdd: dc value used for op instead of transient time=0 value.
+Note: Starting dynamic gmin stepping
+Note: Dynamic gmin stepping completed
+Note: vdd: dc value used for op instead of transient time=0 value.
+Note: Starting dynamic gmin stepping
+Note: Dynamic gmin stepping completed
+Note: vdd: dc value used for op instead of transient time=0 value.
+Note: vdd: dc value used for op instead of transient time=0 value.
+Note: Starting dynamic gmin stepping
+Note: Dynamic gmin stepping completed
+Note: vdd: dc value used for op instead of transient time=0 value.
+Note: Starting dynamic gmin stepping
+Note: Dynamic gmin stepping completed
+Note: vdd: dc value used for op instead of transient time=0 value.
+Note: Starting dynamic gmin stepping
+Note: Dynamic gmin stepping completed
+Note: vdd: dc value used for op instead of transient time=0 value.
+Note: Starting dynamic gmin stepping
+Note: Dynamic gmin stepping completed
+Note: vdd: dc value used for op instead of transient time=0 value.
+Note: Starting dynamic gmin stepping
+Note: Dynamic gmin stepping completed
+Note: vdd: dc value used for op instead of transient time=0 value.
+Note: Starting dynamic gmin stepping
+Note: Dynamic gmin stepping completed
+Note: vdd: dc value used for op instead of transient time=0 value.
+Note: Starting dynamic gmin stepping
+Note: Dynamic gmin stepping completed
+Note: vdd: dc value used for op instead of transient time=0 value.
+Note: Starting dynamic gmin stepping
+Note: Dynamic gmin stepping completed
+Note: vdd: dc value used for op instead of transient time=0 value.
+Note: vdd: dc value used for op instead of transient time=0 value.
+Note: Starting dynamic gmin stepping
+Note: Dynamic gmin stepping completed
+Note: vdd: dc value used for op instead of transient time=0 value.
+Note: vdd: dc value used for op instead of transient time=0 value.
+Note: Starting dynamic gmin stepping
+Note: Dynamic gmin stepping completed
+Note: vdd: dc value used for op instead of transient time=0 value.
+Note: vdd: dc value used for op instead of transient time=0 value.
+Note: Starting dynamic gmin stepping
+Note: Dynamic gmin stepping completed
+Note: vdd: dc value used for op instead of transient time=0 value.
+Note: Starting dynamic gmin stepping
+Note: Dynamic gmin stepping completed
+Note: vdd: dc value used for op instead of transient time=0 value.
+Note: Starting dynamic gmin stepping
+Note: Dynamic gmin stepping completed
+Note: vdd: dc value used for op instead of transient time=0 value.
+Note: Starting dynamic gmin stepping
+Note: Dynamic gmin stepping completed
+Note: vdd: dc value used for op instead of transient time=0 value.
+Note: Starting dynamic gmin stepping
+Note: Dynamic gmin stepping completed
+Note: vdd: dc value used for op instead of transient time=0 value.
+Note: Starting dynamic gmin stepping
+Note: Dynamic gmin stepping completed
+Note: vdd: dc value used for op instead of transient time=0 value.
+Note: vdd: dc value used for op instead of transient time=0 value.
+Note: vdd: dc value used for op instead of transient time=0 value.
+Note: vdd: dc value used for op instead of transient time=0 value.
+Note: Starting dynamic gmin stepping
+Note: Dynamic gmin stepping completed
+Note: vdd: dc value used for op instead of transient time=0 value.
+Note: Starting dynamic gmin stepping
+Note: Dynamic gmin stepping completed
+Note: vdd: dc value used for op instead of transient time=0 value.
+Note: Starting dynamic gmin stepping
+Note: Dynamic gmin stepping completed
+Note: vdd: dc value used for op instead of transient time=0 value.
+Note: vdd: dc value used for op instead of transient time=0 value.
+Note: Starting dynamic gmin stepping
+Note: Dynamic gmin stepping completed
+Note: vdd: dc value used for op instead of transient time=0 value.
+Note: vdd: dc value used for op instead of transient time=0 value.

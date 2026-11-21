@@ -1,0 +1,77 @@
+* Reduced testbench: capless_ldo (Analog Design Bench: sky130-capless-ldo-1v0-20ma-pvt)
+* Subset of the upstream signoff at tt / 27 C, using the upstream development-bench
+* conditions and measurement definitions (DC, PSR, load step at 1.65 V; startup at 1.8 V).
+* Two DUT copies share one ngspice run so the SKY130 library is only loaded once:
+*   XDUT  : DC window, quiescent current, PSR, load step
+*   XDUTS : startup into a 2 kohm load (its own ramping supply)
+* __LIB__ and __CIRCUIT__ are filled in by pipeline/simulate.py.
+.lib "__LIB__" tt
+.include "__CIRCUIT__"
+.options reltol=2e-4 abstol=1e-12 vntol=1e-6
+.temp 27
+VSS vss 0 0
+VREF vref vss 0.4
+
+VSUP vin vss DC 1.65 AC 1
+ILOAD vout vss DC 0 PWL(0 0.5m 20u 0.5m 21u 20m 60u 20m 61u 0.5m 100u 0.5m)
+XDUT vin vout vss vref capless_ldo
+
+VSUPS vins vss PWL(0 0 100u 1.8 400u 1.8)
+RLOADS vouts vss 2k
+XDUTS vins vouts vss vref capless_ldo
+
+.control
+set noaskquit
+* no-load VIN current (current from the ideal VREF source is free)
+op
+let iq_ua = abs(i(VSUP)) * 1e6
+echo METRIC iq_ua $&iq_ua
+
+* output window over 0-20 mA DC load
+dc ILOAD 0 20m 0.2m
+let dc_vmax = vecmax(v(vout))
+let dc_vmin = vecmin(v(vout))
+echo METRIC dc_vmax_v $&dc_vmax
+echo METRIC dc_vmin_v $&dc_vmin
+
+* PSR at 20 mA load
+alter ILOAD dc = 20m
+ac dec 20 100 10meg
+meas ac g1k FIND vdb(vout) AT=1e3
+meas ac g100k FIND vdb(vout) AT=1e5
+meas ac g1m FIND vdb(vout) AT=1e6
+let psr_1k_db = -g1k
+let psr_100k_db = -g100k
+let psr_1m_db = -g1m
+echo METRIC psr_1k_db $&psr_1k_db
+echo METRIC psr_100k_db $&psr_100k_db
+echo METRIC psr_1m_db $&psr_1m_db
+alter ILOAD dc = 0
+
+* load step on XDUT (0-100 us) and startup on XDUTS (0-400 us) in one transient
+tran 40n 400u 0 40n
+meas tran droop MIN v(vout) from=20u to=41u
+meas tran w1max MAX v(vout) from=20u to=41u
+meas tran bump MAX v(vout) from=60u to=81u
+meas tran w2min MIN v(vout) from=60u to=81u
+meas tran t1max MAX v(vout) from=41u to=60u
+meas tran t1min MIN v(vout) from=41u to=60u
+meas tran t2max MAX v(vout) from=81u to=100u
+meas tran t2min MIN v(vout) from=81u to=100u
+let step_vmin = min(droop, w2min)
+let step_vmax = max(w1max, bump)
+let tail_vmin = min(t1min, t2min)
+let tail_vmax = max(t1max, t2max)
+echo METRIC step_vmin_v $&step_vmin
+echo METRIC step_vmax_v $&step_vmax
+echo METRIC tail_vmin_v $&tail_vmin
+echo METRIC tail_vmax_v $&tail_vmax
+meas tran peak MAX v(vouts) from=0 to=400u
+meas tran smax MAX v(vouts) from=200u to=400u
+meas tran smin MIN v(vouts) from=200u to=400u
+echo METRIC start_peak_v $&peak
+echo METRIC start_settle_max_v $&smax
+echo METRIC start_settle_min_v $&smin
+quit
+.endc
+.end

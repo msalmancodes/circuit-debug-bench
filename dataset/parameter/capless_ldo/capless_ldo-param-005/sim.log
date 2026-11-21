@@ -1,0 +1,113 @@
+
+Note: Compatibility modes selected: hs a
+
+
+Circuit: * reduced testbench: capless_ldo (analog design bench: sky130-capless-ldo-1v0-20ma-pvt)
+
+option SCALE: Scale is set to 1e-06 for instance and model parameters
+Doing analysis at TEMP = 27.000000 and TNOM = 27.000000
+
+Using SPARSE 1.3 as Direct Linear Solver
+ Reference value :  0.00000e+00
+No. of Data Rows : 1
+METRIC iq_ua 86.5062
+Doing analysis at TEMP = 27.000000 and TNOM = 27.000000
+
+Using SPARSE 1.3 as Direct Linear Solver
+
+No. of Data Rows : 101
+METRIC dc_vmax_v 1.09914
+METRIC dc_vmin_v 1.08769
+Doing analysis at TEMP = 27.000000 and TNOM = 27.000000
+
+Using SPARSE 1.3 as Direct Linear Solver
+
+No. of Data Rows : 101
+g1k                 =  -3.60737e+01
+g100k               =  -2.93226e+01
+g1m                 =  -1.26504e+01
+METRIC psr_1k_db 36.0737
+METRIC psr_100k_db 29.3226
+METRIC psr_1m_db 12.6504
+Doing analysis at TEMP = 27.000000 and TNOM = 27.000000
+
+Using SPARSE 1.3 as Direct Linear Solver
+
+Initial Transient Solution
+--------------------------
+
+Node                                   Voltage
+----                                   -------
+vss                                          0
+vref                                       0.4
+vin                                       1.65
+vout                                   1.09491
+xdut.nb                               0.650527
+xdut.sa                                1.53671
+xdut.sb                                1.53891
+xdut.pb                               0.944196
+xdut.ns                              0.0722096
+xdut.st                                1.53809
+xdut.tail                             0.837609
+xdut.d4                               0.574992
+xdut.d3                               0.548784
+xdut.fb                               0.437964
+xdut.gate                             0.736324
+xdut.d7                               0.651424
+xdut.s7                                1.36083
+xdut.s8                                1.31959
+xdut.cmx                               1.09491
+xdut.vc1                               1.09491
+vins                                         0
+vouts                             -3.8237e-214
+xduts.nb                           -2.0264e-87
+xduts.sa                          -3.09217e-92
+xduts.sb                           4.31708e-24
+xduts.pb                          -3.85187e-18
+xduts.ns                          -2.73135e-24
+xduts.st                            7.2854e-24
+xduts.tail                        -2.19701e-18
+xduts.d4                          -1.48177e-18
+xduts.d3                          -6.25091e-18
+xduts.fb                         -1.52948e-214
+xduts.gate                        -2.51043e-14
+xduts.d7                          -2.60331e-14
+xduts.s7                          -3.72218e-20
+xduts.s8                          -5.21869e-20
+xduts.cmx                         -3.8237e-214
+xduts.vc1                         -3.8237e-214
+vsups#branch                      -4.94744e-24
+vsup#branch                       -0.000586208
+vref#branch                                  0
+vss#branch                         2.66808e-16
+
+ Reference value :  7.72308e-05
+ Reference value :  1.96500e-04
+ Reference value :  3.17140e-04
+No. of Data Rows : 10029
+droop               =  1.02887e+00 at=  2.00732e-05
+w1max               =  1.09491e+00 at=  2.00000e-05
+bump                =  1.17705e+00 at=  6.10040e-05
+w2min               =  1.08769e+00 at=  6.00000e-05
+t1max               =  1.08769e+00 at=  4.10982e-05
+t1min               =  1.08769e+00 at=  4.10582e-05
+t2max               =  1.09491e+00 at=  8.10708e-05
+t2min               =  1.09491e+00 at=  8.10308e-05
+METRIC step_vmin_v 1.02887
+METRIC step_vmax_v 1.17705
+METRIC tail_vmin_v 1.08769
+METRIC tail_vmax_v 1.09491
+peak                =  1.09721e+00 at=  1.00000e-04
+smax                =  1.09643e+00 at=  2.00940e-04
+smin                =  1.09643e+00 at=  2.01540e-04
+METRIC start_peak_v 1.09721
+METRIC start_settle_max_v 1.09643
+METRIC start_settle_min_v 1.09643
+ngspice-47 done
+
+Warning: m=xx on .subckt line will override multiplier m hierarchy!
+
+Note: iload: dc value used for op instead of transient time=0 value.
+Note: iload: dc value used for op instead of transient time=0 value.
+Note: iload: dc value used for op instead of transient time=0 value.
+Note: iload: dc value used for op instead of transient time=0 value.

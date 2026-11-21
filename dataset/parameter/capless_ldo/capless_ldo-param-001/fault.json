@@ -1,0 +1,219 @@
+{
+  "instance_id": "capless_ldo-param-001",
+  "circuit": "capless_ldo",
+  "category": "parameter",
+  "difficulty": "easy",
+  "seed": 0,
+  "edits": [
+    {
+      "line": 14,
+      "device": "XM3",
+      "model": "sky130_fd_pr__nfet_01v8",
+      "param": "w",
+      "old": "25",
+      "new": "6.25",
+      "factor": 0.25,
+      "original_line": "XM3   d3   d3   vss  vss  sky130_fd_pr__nfet_01v8     l=1.5 w=25",
+      "faulted_line": "XM3 d3 d3 vss vss sky130_fd_pr__nfet_01v8 l=1.5 w=6.25"
+    }
+  ],
+  "inverse_patch": [
+    {
+      "line": 14,
+      "replace_with": "XM3   d3   d3   vss  vss  sky130_fd_pr__nfet_01v8     l=1.5 w=25"
+    }
+  ],
+  "failing_specs": [
+    "iq_ua",
+    "dc_vmax_v",
+    "step_vmax_v",
+    "tail_vmax_v",
+    "start_peak_v",
+    "start_settle_max_v"
+  ],
+  "clear_failures": [
+    "iq_ua",
+    "dc_vmax_v",
+    "step_vmax_v",
+    "tail_vmax_v",
+    "start_peak_v",
+    "start_settle_max_v"
+  ],
+  "severity": 45.772,
+  "symptom": "static",
+  "original_metrics": {
+    "iq_ua": 84.9433,
+    "dc_vmax_v": 1.00414,
+    "dc_vmin_v": 0.99257,
+    "psr_1k_db": 42.4015,
+    "psr_100k_db": 32.8367,
+    "psr_1m_db": 15.3994,
+    "step_vmin_v": 0.941996,
+    "step_vmax_v": 1.06127,
+    "tail_vmin_v": 0.99257,
+    "tail_vmax_v": 0.999815,
+    "start_peak_v": 1.00082,
+    "start_settle_max_v": 1.00026,
+    "start_settle_min_v": 1.00026
+  },
+  "faulted_metrics": {
+    "iq_ua": 111.35,
+    "dc_vmax_v": 1.25131,
+    "dc_vmin_v": 1.24198,
+    "psr_1k_db": 37.8363,
+    "psr_100k_db": 34.5999,
+    "psr_1m_db": 19.0695,
+    "step_vmin_v": 1.20223,
+    "step_vmax_v": 1.29413,
+    "tail_vmin_v": 1.24198,
+    "tail_vmax_v": 1.24784,
+    "start_peak_v": 1.24945,
+    "start_settle_max_v": 1.24886,
+    "start_settle_min_v": 1.24886
+  },
+  "checks": [
+    {
+      "metric": "iq_ua",
+      "value": 111.35,
+      "min": null,
+      "max": 100,
+      "margin": 10,
+      "kind": "static",
+      "passed": false,
+      "excess": 11.349999999999994,
+      "clear_fail": true
+    },
+    {
+      "metric": "dc_vmax_v",
+      "value": 1.25131,
+      "min": null,
+      "max": 1.03,
+      "margin": 0.01,
+      "kind": "static",
+      "passed": false,
+      "excess": 0.2213099999999999,
+      "clear_fail": true
+    },
+    {
+      "metric": "dc_vmin_v",
+      "value": 1.24198,
+      "min": 0.97,
+      "max": null,
+      "margin": 0.01,
+      "kind": "static",
+      "passed": true,
+      "excess": 0.0,
+      "clear_fail": false
+    },
+    {
+      "metric": "psr_1k_db",
+      "value": 37.8363,
+      "min": 30,
+      "max": null,
+      "margin": 3,
+      "kind": "dynamic",
+      "passed": true,
+      "excess": 0.0,
+      "clear_fail": false
+    },
+    {
+      "metric": "psr_100k_db",
+      "value": 34.5999,
+      "min": 20,
+      "max": null,
+      "margin": 2,
+      "kind": "dynamic",
+      "passed": true,
+      "excess": 0.0,
+      "clear_fail": false
+    },
+    {
+      "metric": "psr_1m_db",
+      "value": 19.0695,
+      "min": 10,
+      "max": null,
+      "margin": 2,
+      "kind": "dynamic",
+      "passed": true,
+      "excess": 0.0,
+      "clear_fail": false
+    },
+    {
+      "metric": "step_vmin_v",
+      "value": 1.20223,
+      "min": 0.85,
+      "max": null,
+      "margin": 0.015,
+      "kind": "dynamic",
+      "passed": true,
+      "excess": 0.0,
+      "clear_fail": false
+    },
+    {
+      "metric": "step_vmax_v",
+      "value": 1.29413,
+      "min": null,
+      "max": 1.15,
+      "margin": 0.015,
+      "kind": "dynamic",
+      "passed": false,
+      "excess": 0.1441300000000001,
+      "clear_fail": true
+    },
+    {
+      "metric": "tail_vmin_v",
+      "value": 1.24198,
+      "min": 0.97,
+      "max": null,
+      "margin": 0.01,
+      "kind": "dynamic",
+      "passed": true,
+      "excess": 0.0,
+      "clear_fail": false
+    },
+    {
+      "metric": "tail_vmax_v",
+      "value": 1.24784,
+      "min": null,
+      "max": 1.03,
+      "margin": 0.01,
+      "kind": "dynamic",
+      "passed": false,
+      "excess": 0.21784000000000003,
+      "clear_fail": true
+    },
+    {
+      "metric": "start_peak_v",
+      "value": 1.24945,
+      "min": null,
+      "max": 1.05,
+      "margin": 0.01,
+      "kind": "dynamic",
+      "passed": false,
+      "excess": 0.1994499999999999,
+      "clear_fail": true
+    },
+    {
+      "metric": "start_settle_max_v",
+      "value": 1.24886,
+      "min": null,
+      "max": 1.02,
+      "margin": 0.005,
+      "kind": "dynamic",
+      "passed": false,
+      "excess": 0.22886000000000006,
+      "clear_fail": true
+    },
+    {
+      "metric": "start_settle_min_v",
+      "value": 1.24886,
+      "min": 0.98,
+      "max": null,
+      "margin": 0.005,
+      "kind": "dynamic",
+      "passed": true,
+      "excess": 0.0,
+      "clear_fail": false
+    }
+  ]
+}

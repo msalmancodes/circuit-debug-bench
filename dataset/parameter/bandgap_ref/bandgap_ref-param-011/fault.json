@@ -1,0 +1,144 @@
+{
+  "instance_id": "bandgap_ref-param-011",
+  "circuit": "bandgap_ref",
+  "category": "parameter",
+  "difficulty": "hard",
+  "seed": 0,
+  "edits": [
+    {
+      "line": 28,
+      "device": "XPST",
+      "model": "sky130_fd_pr__pfet_01v8",
+      "param": "l",
+      "old": "0.5",
+      "new": "2",
+      "factor": 4.0,
+      "original_line": "XPST st vref vdd vdd sky130_fd_pr__pfet_01v8 l=0.5 w=10 nf=5",
+      "faulted_line": "XPST st vref vdd vdd sky130_fd_pr__pfet_01v8 l=2 w=10 nf=5"
+    }
+  ],
+  "inverse_patch": [
+    {
+      "line": 28,
+      "replace_with": "XPST st vref vdd vdd sky130_fd_pr__pfet_01v8 l=0.5 w=10 nf=5"
+    }
+  ],
+  "failing_specs": [
+    "overshoot_mv"
+  ],
+  "clear_failures": [
+    "overshoot_mv"
+  ],
+  "severity": 3.521,
+  "symptom": "dynamic_only",
+  "original_metrics": {
+    "vref_v": 1.23088,
+    "power_uw": 70.4743,
+    "line_mv_per_v": 12.9746,
+    "psrr_max_vv": 0.110048,
+    "startup_min_v": 1.23088,
+    "startup_max_v": 1.23089,
+    "overshoot_mv": 19.811,
+    "tc_ppm_per_c": 26.3038
+  },
+  "faulted_metrics": {
+    "vref_v": 1.23088,
+    "power_uw": 70.471,
+    "line_mv_per_v": 12.9746,
+    "psrr_max_vv": 0.110747,
+    "startup_min_v": 1.23088,
+    "startup_max_v": 1.23091,
+    "overshoot_mv": 170.42,
+    "tc_ppm_per_c": 26.3038
+  },
+  "checks": [
+    {
+      "metric": "vref_v",
+      "value": 1.23088,
+      "min": 1.18,
+      "max": 1.26,
+      "margin": 0.02,
+      "kind": "static",
+      "passed": true,
+      "excess": 0.0,
+      "clear_fail": false
+    },
+    {
+      "metric": "power_uw",
+      "value": 70.471,
+      "min": null,
+      "max": 150,
+      "margin": 15,
+      "kind": "static",
+      "passed": true,
+      "excess": 0.0,
+      "clear_fail": false
+    },
+    {
+      "metric": "line_mv_per_v",
+      "value": 12.9746,
+      "min": null,
+      "max": 20,
+      "margin": 4,
+      "kind": "static",
+      "passed": true,
+      "excess": 0.0,
+      "clear_fail": false
+    },
+    {
+      "metric": "tc_ppm_per_c",
+      "value": 26.3038,
+      "min": null,
+      "max": 50,
+      "margin": 10,
+      "kind": "static",
+      "passed": true,
+      "excess": 0.0,
+      "clear_fail": false
+    },
+    {
+      "metric": "psrr_max_vv",
+      "value": 0.110747,
+      "min": null,
+      "max": 0.2,
+      "margin": 0.04,
+      "kind": "dynamic",
+      "passed": true,
+      "excess": 0.0,
+      "clear_fail": false
+    },
+    {
+      "metric": "startup_min_v",
+      "value": 1.23088,
+      "min": 1.18,
+      "max": null,
+      "margin": 0.02,
+      "kind": "dynamic",
+      "passed": true,
+      "excess": 0.0,
+      "clear_fail": false
+    },
+    {
+      "metric": "startup_max_v",
+      "value": 1.23091,
+      "min": null,
+      "max": 1.26,
+      "margin": 0.02,
+      "kind": "dynamic",
+      "passed": true,
+      "excess": 0.0,
+      "clear_fail": false
+    },
+    {
+      "metric": "overshoot_mv",
+      "value": 170.42,
+      "min": null,
+      "max": 100,
+      "margin": 20,
+      "kind": "dynamic",
+      "passed": false,
+      "excess": 70.41999999999999,
+      "clear_fail": true
+    }
+  ]
+}

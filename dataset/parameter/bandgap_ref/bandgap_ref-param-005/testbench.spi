@@ -1,0 +1,51 @@
+* Reduced testbench: bandgap_reference (Analog Design Bench: sky130-bandgap-reference-pvt)
+* Nominal corner (tt, 1.8 V, 27 C) subset of the upstream signoff. Spec limits
+* live in spec.yaml; this deck only prints METRIC lines.
+* __LIB__ and __CIRCUIT__ are filled in by pipeline/simulate.py.
+.lib "__LIB__" tt
+.include "__CIRCUIT__"
+.options reltol=1e-4 abstol=1e-14 vntol=1e-8
+.temp 27
+VSS vss 0 0
+* DC 1.8 V for op/dc, AC 1 for supply-coupling, 1 us ramp for startup
+VDD vdd vss DC 1.8 AC 1 PWL(0 0 1u 1.8)
+XBG vss vdd vref bandgap_reference
+CLOAD vref vss 5p
+
+.control
+set noaskquit
+* nominal operating point
+op
+let vref_v = v(vref)
+let power_uw = abs(i(vdd)) * 1.8 * 1e6
+echo METRIC vref_v $&vref_v
+echo METRIC power_uw $&power_uw
+
+* line regulation over 1.62-1.98 V at 27 C
+dc VDD 1.62 1.98 10m
+let line_mv_per_v = (vecmax(v(vref)) - vecmin(v(vref))) / 0.36 * 1e3
+echo METRIC line_mv_per_v $&line_mv_per_v
+
+* worst VDD-to-VREF coupling, 10 Hz - 100 MHz
+ac dec 10 10 100meg
+let psrr_max_vv = vecmax(mag(v(vref)))
+echo METRIC psrr_max_vv $&psrr_max_vv
+
+* startup: 1 us supply ramp; vref must be in window from 11 us to 21 us
+tran 10n 30u
+meas tran startup_min MIN v(vref) from=11u to=21u
+meas tran startup_max MAX v(vref) from=11u to=21u
+meas tran vfinal FIND v(vref) AT=30u
+meas tran vpeak MAX v(vref) from=0 to=30u
+let overshoot_mv = (vpeak - vfinal) * 1e3
+echo METRIC startup_min_v $&startup_min
+echo METRIC startup_max_v $&startup_max
+echo METRIC overshoot_mv $&overshoot_mv
+
+* temperature coefficient over -40..125 C (box method)
+dc temp -40 125 5
+let tc_ppm_per_c = (vecmax(v(vref)) - vecmin(v(vref))) / (mean(v(vref)) * 165) * 1e6
+echo METRIC tc_ppm_per_c $&tc_ppm_per_c
+quit
+.endc
+.end

@@ -1,0 +1,27 @@
+# Reduced spec for the external-capacitor-free LDO.
+# Source: Analog Design Bench task sky130-capless-ldo-1v0-20ma-pvt (upstream/instruction.md).
+# Limits are the upstream limits; checked only at the upstream development-bench conditions:
+# tt / 27 C / 1.65 V for DC, PSR and load step, tt / 27 C / 1.8 V for startup.
+# PSR at 1 kHz uses the 1.5 V-input limit (30 dB), the looser of the two upstream limits.
+# Not included from upstream: PVT corners and the 1.5 V / 1.8 V supply matrix.
+#
+# margin = how far past the limit a faulted circuit must land to count as a "clear" failure.
+# kind   = static (op/dc analyses) or dynamic (ac/tran analyses).
+circuit: capless_ldo
+subckt: capless_ldo
+source: https://github.com/Arcadia-1/analog-design-bench/tree/main/tasks/sky130-capless-ldo-1v0-20ma-pvt
+testbench: testbench.spi
+specs:
+  - {metric: iq_ua,              max: 100,  margin: 10,    kind: static,  desc: "No-load VIN current (uA)"}
+  - {metric: dc_vmax_v,          max: 1.03, margin: 0.01,  kind: static,  desc: "Max VOUT over 0-20 mA DC load (V)"}
+  - {metric: dc_vmin_v,          min: 0.97, margin: 0.01,  kind: static,  desc: "Min VOUT over 0-20 mA DC load (V)"}
+  - {metric: psr_1k_db,          min: 30,   margin: 3,     kind: dynamic, desc: "PSR at 1 kHz, 20 mA (dB)"}
+  - {metric: psr_100k_db,        min: 20,   margin: 2,     kind: dynamic, desc: "PSR at 100 kHz, 20 mA (dB)"}
+  - {metric: psr_1m_db,          min: 10,   margin: 2,     kind: dynamic, desc: "PSR at 1 MHz, 20 mA (dB)"}
+  - {metric: step_vmin_v,        min: 0.85, margin: 0.015, kind: dynamic, desc: "Min VOUT during 0.5<->20 mA step edges (V)"}
+  - {metric: step_vmax_v,        max: 1.15, margin: 0.015, kind: dynamic, desc: "Max VOUT during 0.5<->20 mA step edges (V)"}
+  - {metric: tail_vmin_v,        min: 0.97, margin: 0.01,  kind: dynamic, desc: "Min VOUT in recovery windows (V)"}
+  - {metric: tail_vmax_v,        max: 1.03, margin: 0.01,  kind: dynamic, desc: "Max VOUT in recovery windows (V)"}
+  - {metric: start_peak_v,       max: 1.05, margin: 0.01,  kind: dynamic, desc: "Startup peak VOUT (V)"}
+  - {metric: start_settle_max_v, max: 1.02, margin: 0.005, kind: dynamic, desc: "Max VOUT 200-400 us after startup (V)"}
+  - {metric: start_settle_min_v, min: 0.98, margin: 0.005, kind: dynamic, desc: "Min VOUT 200-400 us after startup (V)"}
